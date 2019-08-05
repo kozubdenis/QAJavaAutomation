@@ -6,6 +6,11 @@ public class DateDemo {
         Date dateDemo = new Date(13,11,1988);
         dateDemo.printData();
 
+        dateDemo.print(Date.Format.RU);
+        dateDemo.print(Date.Format.USA);
+        dateDemo.print(Date.Format.ENG);
+        dateDemo.print(Date.Format.UK);
+
         DateTime timeDemo = new DateTime(23, 23, 23);
 
         ExtendedTime extendedTime = new ExtendedTime(111);

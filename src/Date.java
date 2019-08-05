@@ -1,8 +1,17 @@
+import javafx.scene.input.DataFormat;
+
 public class Date {
     private int currentDay;
     private int currentMonth;
     private int currentYear;
 
+    public enum Format
+    {
+        RU,
+        USA,
+        ENG,
+        UK
+    }
     //конструткор инициированный 1 января 1970
     public Date() {
         this.currentDay = 1;
@@ -93,6 +102,32 @@ public class Date {
         return super.hashCode();
     }
     public void printData(){
+        System.out.println ((currentDay)+"."+(currentMonth)+"."+(currentYear));
+    }
+
+    // ОТображение даты согласно заданному формату из списка перечислений
+
+    public void print(Format format){
+        if (format == Format.RU){
+            System.out.println ("Отображение даты в RU (Россия) формате: "
+                    +(currentDay)+"."+(currentMonth)+"."+(currentYear));
+        }
+
+        if (format == Format.USA){
+            System.out.println ("Отображение даты в USA (США) формате: "
+                    +(currentMonth)+"-"+(currentDay)+"-"+(currentYear));
+        }
+
+        if (format == Format.ENG){
+            System.out.println ("Отображение даты в ENG (Международный английский) формате: "
+                    +(currentDay)+"-"+(currentMonth)+"-"+(currentYear));
+        }
+
+        if (format == Format.UK){
+            System.out.println ("Отображение даты в UK (Великобритания) формате: "
+                    +(currentDay)+"/"+(currentMonth)+"/"+(currentYear));
+        }
+
         System.out.println ((currentDay)+"."+(currentMonth)+"."+(currentYear));
     }
 }
